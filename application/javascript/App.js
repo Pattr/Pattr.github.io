@@ -1,8 +1,14 @@
 (function(){
 	'use strict';
-
+	/**
+	* Initialization of the global AngularJS module
+	*/
 	var pattr = angular.module('pattr', ['ui.router']);
 
+	/**
+	* Configuration of the AngularJS application
+	* Definition of every routes
+	*/
 	pattr.config(function($stateProvider, $urlRouterProvider, $compileProvider) {
 			$compileProvider.debugInfoEnabled(false);
 			$urlRouterProvider.otherwise('/');

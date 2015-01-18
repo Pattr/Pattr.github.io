@@ -2,7 +2,8 @@
 	'use strict';
 
 	var pattr = angular.module('pattr', ['ui.router'])
-		.config(function($stateProvider, $urlRouterProvider) {
+		.config(function($stateProvider, $urlRouterProvider, $compileProvider) {
+			$compileProvider.debugInfoEnabled(false);
 			$urlRouterProvider.otherwise('/');
 			$stateProvider.state('home', {
 				url: '/',

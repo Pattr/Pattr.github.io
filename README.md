@@ -4,6 +4,10 @@
 
 # Pattr.github.io
 
+## How launch the Portal
+
+You can launch this Portal with a basic Apache distribution (WAMP, LAMP, ...). You can also use the Node.JS serve tool. 
+
 ## Technologies
 
 This Web Site use the following technologies : 

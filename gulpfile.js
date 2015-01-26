@@ -2,7 +2,8 @@
    'use strict';
    var gulp = require('gulp'),
 		eslint = require('gulp-eslint'),
-		protractor = require('gulp-protractor').protractor;
+		protractor = require('gulp-protractor').protractor,
+		karma = require('karma').server;
 
 	gulp.task('quality', function() {
 
@@ -37,6 +38,11 @@
 			});
 	});
 
+	gulp.task('test:unit', function() {
+		karma.start({
+			configFile: __dirname + '/test/karma.conf.js',
+			singleRun: true
+		});
+	});
 	gulp.task('default', ['quality']);
-	gulp.task('test', ['test:e2e']);
 }());

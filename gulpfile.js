@@ -44,5 +44,6 @@
 			singleRun: true
 		});
 	});
+	
 	gulp.task('default', ['quality']);
 }());

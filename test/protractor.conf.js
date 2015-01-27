@@ -1,10 +1,6 @@
 exports.config = {
-    
-    seleniumArgs: [],
 
-    sauceUser: null,
-    sauceKey: null,    // ----- What tests to run -----
-    
+    directConnect: true,
     specs: [
         '../test/e2e/**/*.js'
     ],

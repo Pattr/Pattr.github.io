@@ -27,6 +27,14 @@
 			it('should have ui.router as a dependency', function() {
 				expect(hasModule('ui.router')).toBeTruthy();
 			});
+
+			it('should have pattr.controllers as a dependency', function() {
+				expect(hasModule('pattr.controllers')).toBeTruthy();
+			});
+
+			it('should have pattr.services as a dependency', function() {
+				expect(hasModule('pattr.services')).toBeTruthy();
+			});
 		});
 	});
 })();

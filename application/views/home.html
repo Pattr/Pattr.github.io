@@ -1,2 +1,12 @@
 <h2>Home Page</h2>
+
+<section data-ng-repeat="(category, components) in categories">
+	<h2>{{category}}</h2>
+	<ul>
+		<li data-ng-repeat="component in components">
+			<a ui-sref="component({ id: component.id })">{{component.name}}</a>
+		</li>
+	</ul>
+</section>
+
 <a data-ui-sref="documentation">To Documentation Page</a>

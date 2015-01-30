@@ -4,14 +4,13 @@
 
 	describe('HomeController:', function() {
 
-		var ComponentService, httpBackend;
-		var scope, $location, createController;
+		var httpBackend;
+		var scope, createController;
 
 		beforeEach(module('pattr.services'));
 		beforeEach(module('pattr.controllers'));
 
-		beforeEach(inject(function ($rootScope, $controller, _ComponentService_, $httpBackend) {
-			ComponentService = _ComponentService_;
+		beforeEach(inject(function ($rootScope, $controller, $httpBackend) {
 			httpBackend = $httpBackend;
 			httpBackend.whenGET('/components/list.json')
 				.respond([
@@ -23,16 +22,16 @@
 				]);
 			scope = $rootScope.$new();
 
-	        createController = function() {
-	            return $controller('HomeController', {
-	                '$scope': scope
-	            });
-	        };
+			createController = function() {
+				return $controller('HomeController', {
+					'$scope': scope
+				});
+			};
 		}));
 
 		it('should return the list of components grouped by category', function () {
-			
-			var controller = createController();	
+
+			createController();
 			httpBackend.flush();
 			expect(scope.categories.cat1).toBeDefined();
 			expect(scope.categories.cat2).toBeDefined();

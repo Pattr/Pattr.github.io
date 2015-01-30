@@ -4,14 +4,13 @@
 
 	describe('ComponentController:', function() {
 
-		var ComponentService, httpBackend;
-		var scope, $location, createController;
+		var httpBackend;
+		var scope, createController;
 
 		beforeEach(module('pattr.services'));
 		beforeEach(module('pattr.controllers'));
 
-		beforeEach(inject(function ($rootScope, $controller, _ComponentService_, $httpBackend) {
-			ComponentService = _ComponentService_;
+		beforeEach(inject(function ($rootScope, $controller, $httpBackend) {
 			httpBackend = $httpBackend;
 			httpBackend.whenGET('/components/list.json')
 				.respond([
@@ -23,29 +22,28 @@
 				]);
 			scope = $rootScope.$new();
 
-	        createController = function() {
-	            return $controller('ComponentController', {
-	                '$scope': scope, 
-	                '$stateParams': {
-	                	'id': 'comp1'
-	                }
-	            });
-	        };
+			createController = function() {
+				return $controller('ComponentController', {
+					'$scope': scope,
+					'$stateParams': {
+						'id': 'comp1'
+					}
+				});
+			};
 		}));
 
 		it('should return the component according to the stateParams.id property', function () {
-			
-			var controller = createController();	
+			createController();
 			httpBackend.flush();
 			expect(scope.component).toBeDefined();
 			expect(scope.component).toEqual({id: 'comp1', name: 'comp1', category: 'cat1'});
-		})
+		});
 
 		it('should return only one component if getComponent return an Array', function () {
-			var controller = createController();	
+			createController();
 			httpBackend.flush();
 			expect(scope.component).toBeDefined();
 			expect(scope.component.id).toBeDefined();
-		})
+		});
 	});
 })();

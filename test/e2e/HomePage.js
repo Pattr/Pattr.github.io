@@ -1,8 +1,6 @@
 (function(){
 	'use strict';
 
-	var conf = require('../protractor.conf.js');
-
 	describe('Home Page ', function() {
 
 		beforeEach(function () {

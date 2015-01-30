@@ -11,8 +11,8 @@
 				getComponent: function(id){
 					var $this = this;
 					return $this.getComponentsList().then(function(result){
-						return _.find(result.data, function(c) { 
-							return $this.generateId(c.name) === id; 
+						return _.find(result.data, function(c) {
+							return $this.generateId(c.name) === id;
 						});
 					});
 				},
@@ -20,6 +20,6 @@
 				generateId: function(name){
 					return angular.lowercase(name.replace(/\s+/g, '-'));
 				}
-			}
+			};
 		}]);
 })();

@@ -7,16 +7,38 @@
 
 	gulp.task('quality', function() {
 
-		gulp.src(['application/**/*.js'])
+		gulp.src(['application/javascript/**/*.js'])
 			.pipe(eslint({
 				rules: {
 					'quotes': [2, 'single']
 				},
 				globals: {
-					'angular': true
+					'angular': true,
+					'_': true
 				}
 			}))
-			.pipe(eslint.failOnError());
+			.pipe(eslint.format());
+
+		gulp.src(['test/**/*.js'])
+			.pipe(eslint({
+				rules: {
+					'quotes': [2, 'single']
+				},
+				globals: {
+					'angular': true,
+					'describe': true,
+					'it': true,
+					'beforeEach': true,
+					'browser': true,
+					'expect': true,
+					'element': true,
+					'by': true,
+					'exports': true,
+					'inject': true,
+					'module': true
+				}
+			}))
+			.pipe(eslint.format());
 	});
 
 	// Start a standalone server
@@ -44,6 +66,6 @@
 			singleRun: true
 		});
 	});
-	
+
 	gulp.task('default', ['quality']);
 }());

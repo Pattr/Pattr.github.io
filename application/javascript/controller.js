@@ -19,7 +19,7 @@
 					$log.warn('The result of the ComponentService.getComponent method should not return an Array');
 					component = component[0];
 				}
-				$scope.component = component;
+				$scope.component = angular.extend({id: $stateParams.id}, component);
 			});
 		}]);
 })();

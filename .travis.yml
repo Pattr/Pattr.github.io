@@ -5,5 +5,4 @@
    - chmod +x ./node_modules/.bin/gulp
  install: npm install
  script:
-   - bower install
    - gulp

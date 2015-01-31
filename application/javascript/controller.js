@@ -13,7 +13,7 @@
 				});
 			});
 		}])
-		.controller('ComponentController', ['$scope', 'ComponentService', '$stateParams', '$log', function($scope, ComponentService, $stateParams, $log){
+		.controller('ComponentController', ['$scope', 'ComponentService', '$stateParams', function($scope, ComponentService, $stateParams){
 			ComponentService.getComponent($stateParams.id).then(function(component){
 				$scope.component = angular.extend({id: $stateParams.id}, component);
 			});

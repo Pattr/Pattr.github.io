@@ -4,14 +4,13 @@
 
 	describe('HomeController:', function() {
 
-		var httpBackend, log, scope, createController;
+		var httpBackend, scope, createController;
 
 		beforeEach(module('pattr.services'));
 		beforeEach(module('pattr.controllers'));
 		beforeEach(function(){
 			inject(function ($rootScope, $controller, $httpBackend) {
 				httpBackend = $httpBackend;
-				
 				httpBackend.whenGET('/components/list.json')
 					.respond([
 						{name: 'comp1', category: 'cat1'},
@@ -27,7 +26,7 @@
 						'$scope': scope
 					});
 				};
-			})
+			});
 
 		});
 

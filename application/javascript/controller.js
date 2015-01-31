@@ -15,10 +15,6 @@
 		}])
 		.controller('ComponentController', ['$scope', 'ComponentService', '$stateParams', '$log', function($scope, ComponentService, $stateParams, $log){
 			ComponentService.getComponent($stateParams.id).then(function(component){
-				if(angular.isArray(component)){
-					$log.warn('The result of the ComponentService.getComponent method should not return an Array');
-					component = component[0];
-				}
 				$scope.component = angular.extend({id: $stateParams.id}, component);
 			});
 		}]);

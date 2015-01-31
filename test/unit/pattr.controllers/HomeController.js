@@ -4,30 +4,32 @@
 
 	describe('HomeController:', function() {
 
-		var httpBackend;
-		var scope, createController;
+		var httpBackend, log, scope, createController;
 
 		beforeEach(module('pattr.services'));
 		beforeEach(module('pattr.controllers'));
+		beforeEach(function(){
+			inject(function ($rootScope, $controller, $httpBackend) {
+				httpBackend = $httpBackend;
+				
+				httpBackend.whenGET('/components/list.json')
+					.respond([
+						{name: 'comp1', category: 'cat1'},
+						{name: 'comp2', category: 'cat2'},
+						{name: 'comp3', category: 'cat3'},
+						{name: 'comp4', category: 'cat1'},
+						{name: 'comp5', category: 'cat2'}
+					]);
+				scope = $rootScope.$new();
 
-		beforeEach(inject(function ($rootScope, $controller, $httpBackend) {
-			httpBackend = $httpBackend;
-			httpBackend.whenGET('/components/list.json')
-				.respond([
-					{name: 'comp1', category: 'cat1'},
-					{name: 'comp2', category: 'cat2'},
-					{name: 'comp3', category: 'cat3'},
-					{name: 'comp4', category: 'cat1'},
-					{name: 'comp5', category: 'cat2'}
-				]);
-			scope = $rootScope.$new();
+				createController = function() {
+					return $controller('HomeController', {
+						'$scope': scope
+					});
+				};
+			})
 
-			createController = function() {
-				return $controller('HomeController', {
-					'$scope': scope
-				});
-			};
-		}));
+		});
 
 		it('should return the list of components grouped by category', function () {
 

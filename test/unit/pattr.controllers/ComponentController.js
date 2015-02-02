@@ -4,22 +4,12 @@
 
 	describe('ComponentController:', function() {
 
-		var httpBackend;
 		var scope, createController;
 
 		beforeEach(module('pattr.services'));
 		beforeEach(module('pattr.controllers'));
 
-		beforeEach(inject(function ($rootScope, $controller, $httpBackend) {
-			httpBackend = $httpBackend;
-			httpBackend.whenGET('/components/list.json')
-				.respond([
-					{name: 'comp1', category: 'cat1'},
-					{name: 'comp2', category: 'cat2'},
-					{name: 'comp3', category: 'cat3'},
-					{name: 'comp3', category: 'cat1'},
-					{name: 'comp5', category: 'cat2'}
-				]);
+		beforeEach(inject(function ($rootScope, $controller) {
 			scope = $rootScope.$new();
 
 			createController = function() {

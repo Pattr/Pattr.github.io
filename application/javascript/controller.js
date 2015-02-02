@@ -13,9 +13,7 @@
 				});
 			});
 		}])
-		.controller('ComponentController', ['$scope', 'ComponentService', '$stateParams', function($scope, ComponentService, $stateParams){
-			ComponentService.getComponent($stateParams.id).then(function(component){
-				$scope.component = angular.extend({id: $stateParams.id}, component);
-			});
+		.controller('ComponentController', ['$scope', 'component', function($scope, component){
+			$scope.component = component;
 		}]);
 })();

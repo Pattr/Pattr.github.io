@@ -24,8 +24,14 @@
 			.state('component', {
 				url: '/component/:id',
 				templateUrl: 'application/views/component.html',
-				controller: 'ComponentController'
+				controller: 'ComponentController',
+				resolve: {
+					component: ['ComponentService', '$stateParams', function(ComponentService, $stateParams){
+						return ComponentService.getComponent($stateParams.id).then(function(component){
+							return angular.extend({id: $stateParams.id}, component);
+						});
+					}]
+				}
 			});
-
 		});
 })();

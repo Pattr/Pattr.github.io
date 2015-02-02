@@ -22,28 +22,20 @@
 				]);
 			scope = $rootScope.$new();
 
-			createController = function(idComponent) {
+			createController = function() {
 				return $controller('ComponentController', {
 					'$scope': scope,
-					'$stateParams': {
-						'id': idComponent
-					}
+					'component': { id: 'comp1', name: 'comp1', category: 'cat1'}
 				});
 			};
 		}));
 
 		it('should return the component according to the stateParams.id property', function () {
-			createController('comp1');
-			httpBackend.flush();
+			createController();
 			expect(scope.component).toBeDefined();
 			expect(scope.component).toEqual({id: 'comp1', name: 'comp1', category: 'cat1'});
 		});
 
-		it('should return only one component if getComponent return an Array', function () {
-			createController('comp3');
-			httpBackend.flush();
-			expect(scope.component).toBeDefined();
-			expect(scope.component.id).toBeDefined();
-		});
+
 	});
 })();

@@ -1,5 +1,10 @@
-{{component.name}}
-{{component.category}}
-{{component.version}}
+<h1>Pattr</h1>
+<p>{{component.category}}</p>
+<h2>{{component.name}}</h2>
+<p>{{component.version}}</p>
 
-<article data-ng-include="'components/' + component.id + '.html'"></article>
+<ul>
+	<li><a href="#">Fork us on Github</a></li>
+	<li><a href="#">Follow @pattr</a></li>
+</ul>
+<div data-ng-include="'components/' + component.id + '.html'"></div>

@@ -1,5 +1,8 @@
+<!DOCTYPE html>
 <html lang="en" data-ng-app="pattr">
 	<head>
+
+		<link href="application/styles/main.css" />
 		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 		<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 		<script type="text/javascript" src="bower_components/lodash/lodash.min.js"></script>
@@ -10,7 +13,50 @@
 
 	</head>
 	<body>
-		<h1>Main Layout</h1>
-		<main data-ui-view></main>
+		<header>
+				<h1>Pattr</h1>
+		</header>
+		
+		<div>
+			<nav role="navigation">
+				<ul>
+					<li>
+						Blocks
+						<ul>
+							<li>Accordion</li>
+							<li>Carousel</li>
+						</ul>
+					</li>
+					<li>
+						Editorial
+						<ul>
+							<li>Article</li>
+							<li>Article Entry</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<ul>
+				<li><a href="https://github.com/Pattr/Pattr.github.io">Fork us on Github</a></li>
+				<li><a href="#">Follow @pattr</a></li>
+			</ul>
+			<p>
+				<a href="https://github.com/Pattr/Pattr.github.io/archive/master.zip">Download</a>
+			</p>
+		</div>
+		<main data-ui-view>
+		</main>
+
+		<footer>
+			<p class="copyright">
+				© Except where otherwise noted, content on this site is licensed under a <a shape="rect" href="#">MIT License</a>
+			</p>
+			<ul>
+				<li><a href="https://github.com/Pattr/Pattr.github.io">About Pattr</a></li>
+				<li><a href="#">Contact</a></li>		
+			</ul> 
+
+		</footer>
+
 	</body>
 </html>

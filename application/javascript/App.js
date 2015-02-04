@@ -32,5 +32,10 @@
 					}]
 				}
 			});
-		});
+	})
+	.run(['$rootScope', '$state', function($rootScope, $state){
+		$rootScope.getCurrentState = function(){
+			return $state.current.name;
+		};
+	}]);
 })();

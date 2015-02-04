@@ -7,8 +7,8 @@
 			browser.get('/#/');
 		});
 
-		it('should display the "Home Page" h2 title', function(){
-			expect(element(by.tagName('h2')).getInnerHtml()).toEqual('Home Page');
+		it('should display the "Pattr" h1 title', function(){
+			expect(element(by.tagName('h1')).getInnerHtml()).toEqual('Pattr');
 		});
 	});
 })();

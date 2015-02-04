@@ -67,5 +67,5 @@
 		});
 	});
 
-	gulp.task('default', ['quality']);
+	gulp.task('default', ['quality', 'test:unit']);
 }());

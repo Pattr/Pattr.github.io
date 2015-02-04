@@ -18,20 +18,16 @@
 		</header>
 		
 		<div>
-			<nav role="navigation">
+			<nav role="navigation" data-ng-controller="NavController">
 				<ul>
-					<li>
-						Blocks
+					<li data-ng-repeat="(category, components) in categories track by category">
+						{{::category}}
 						<ul>
-							<li>Accordion</li>
-							<li>Carousel</li>
-						</ul>
-					</li>
-					<li>
-						Editorial
-						<ul>
-							<li>Article</li>
-							<li>Article Entry</li>
+							<li data-ng-repeat="component in components track by component.id">
+								<a ui-sref="component({ id: component.id })">
+									{{component.name}}
+								</a>
+							</li>
 						</ul>
 					</li>
 				</ul>

@@ -18,8 +18,7 @@
 			$urlRouterProvider.otherwise('/');
 			$stateProvider.state('home', {
 				url: '/',
-				templateUrl: 'application/views/home.html',
-				controller: 'HomeController'
+				templateUrl: 'application/views/home.html'
 			})
 			.state('component', {
 				url: '/component/:id',

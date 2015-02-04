@@ -22,7 +22,7 @@
 				scope = $rootScope.$new();
 
 				createController = function() {
-					return $controller('HomeController', {
+					return $controller('NavController', {
 						'$scope': scope
 					});
 				};

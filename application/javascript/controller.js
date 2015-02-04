@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular.module('pattr.controllers', [])
-		.controller('HomeController', ['$scope', 'ComponentService', function($scope, ComponentService){
+		.controller('NavController', ['$scope', 'ComponentService', function($scope, ComponentService){
 			ComponentService.getComponentsList().success(function(list){
 				list = _.map(list, function(c) {
 					c.id = ComponentService.generateId(c.name);

@@ -13,8 +13,12 @@
 	* Configuration of the AngularJS application
 	* Definition of every routes
 	*/
-	pattr.config(function($stateProvider, $urlRouterProvider) {
-			//$compileProvider.debugInfoEnabled(false);
+	pattr.config(function($stateProvider, $urlRouterProvider, $locationProvider, $compileProvider) {
+			$locationProvider.html5Mode({
+				enabled: true,
+				requireBase: false
+			});
+			$compileProvider.debugInfoEnabled(false);
 			$urlRouterProvider.otherwise('/');
 			$stateProvider.state('home', {
 				url: '/',

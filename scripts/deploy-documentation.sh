@@ -2,10 +2,10 @@
 
 echo Documentation Generation
 
-gulp quality > result.txt
+#generate the documentation
 
-if ! git diff-index --quiet HEAD --; then
-    echo CHANGED
+if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+    #push the documentation into Github
 fi
 
 exit

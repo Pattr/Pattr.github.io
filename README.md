@@ -15,3 +15,4 @@ This Web Site use the following technologies :
 * AngularUI-router
 * Gulp
 * ESLint
+* Bower

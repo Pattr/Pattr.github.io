@@ -15,8 +15,7 @@
 	*/
 	pattr.config(function($stateProvider, $urlRouterProvider, $locationProvider, $compileProvider) {
 			$locationProvider.html5Mode({
-				enabled: true,
-				requireBase: false
+				enabled: true
 			});
 			$compileProvider.debugInfoEnabled(false);
 			$urlRouterProvider.otherwise('/');

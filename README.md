@@ -8,6 +8,13 @@
 
 You can launch this Portal with a basic Apache distribution (WAMP, LAMP, ...). You can also use the Node.JS serve tool. 
 
+### Gulp Integration
+
+If you are familiar with Gulp, we have implemented few tasks you can use on your local machine : 
+* gulp quality : will run the ESLint plugin
+* gulp test:unit : will execute unit tests
+* gulp test:e2e : will execute Integration test (the server has to be up)
+
 ## Technologies
 
 This Web Site use the following technologies : 

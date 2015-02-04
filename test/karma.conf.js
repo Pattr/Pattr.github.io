@@ -16,7 +16,11 @@
             // frameworks to use
             frameworks: ['jasmine'],
 
-
+            plugins: [
+                'karma-phantomjs-launcher',
+                'karma-jasmine',
+                'karma-ng-html2js-preprocessor'
+            ],
             // list of files / patterns to load in the browser
             files: [
                 'bower_components/angular/angular.js',
@@ -68,7 +72,7 @@
             // - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
             // - PhantomJS
             // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
-            browsers: ['Chrome'],
+            browsers: ['PhantomJS'],
 
 
             // If browser does not capture in given timeout [ms], kill it

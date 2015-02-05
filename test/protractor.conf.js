@@ -13,6 +13,8 @@ exports.config = {
 
     rootElement: 'body',
 
+    framework: 'jasmine2',
+
     jasmineNodeOpts: {
         // onComplete will be called just before the driver quits.
         onComplete: null,

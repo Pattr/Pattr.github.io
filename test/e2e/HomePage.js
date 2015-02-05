@@ -3,7 +3,7 @@
 
 	describe('Home Page ', function() {
 
-		beforeEach(function () {
+		beforeAll(function () {
 			browser.get('/');
 		});
 
@@ -11,28 +11,38 @@
 			expect(element(by.tagName('h1')).getInnerHtml()).toEqual('Pattr');
 		});
 
-		it('should contain the copyright paragrph', function(){
-			//TODO
+		it('should contain the copyright paragraph', function(){
+			expect(element(by.className('copyright')).isPresent()).toBeTruthy();
+			expect(element(by.xpath('//a[@href="https://github.com/Pattr/Pattr.github.io/blob/master/LICENSE"]')).isPresent()).toBeTruthy();
 		});
 
 		it('should contain the About Pattr link', function(){
-			//TODO
+			var link = element(by.xpath('//a[@href="https://github.com/Pattr/Pattr.github.io/blob/master/README.md"]'));
+			expect(link.isPresent()).toBeTruthy();
+			expect(link.getInnerHtml()).toEqual('About Pattr');
 		});
 
 		it('should contain the Contact link', function(){
-			//TODO
+			var link = element(by.xpath('//a[@href="https://github.com/Pattr/Pattr.github.io/issues"]'));
+			expect(link.isPresent()).toBeTruthy();
+			expect(link.getInnerHtml()).toEqual('Contact');
 		});
 
 		it('should contain a <h1> with the classe CSS home', function(){
-			//TODO
+			expect(element(by.xpath('//h1[@class="home"]')).isPresent()).toBeTruthy();
 		});
 
 		it('should contain the Github link', function(){
-			//TODO
+			var link = element(by.xpath('//a[@href="https://github.com/Pattr/Pattr.github.io"]'));
+			expect(link.isPresent()).toBeTruthy();
+			expect(link.getInnerHtml()).toEqual('Fork us on Github');
 		});
 
 		it('should contain the Twitter link', function(){
-			//TODO
+			//Change with the Twitter URL
+			var link = element(by.xpath('/html/body/div[1]/ul/li[2]/a'));
+			expect(link.isPresent()).toBeTruthy();
+			expect(link.getInnerHtml()).toEqual('Follow @pattr');
 		});
 	});
 })();

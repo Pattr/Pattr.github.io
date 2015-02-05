@@ -2,7 +2,10 @@
 	'use strict';
 
 	angular.module('pattr.services', [])
-		.factory('ComponentService', ['$http', function($http){
+		.factory('ComponentService', ComponentService);
+
+		ComponentService.$inject = ['$http'];
+		function ComponentService($http){
 			return {
 				getComponentsList: function(){
 					return $http.get('/components/list.json', {cache: true});
@@ -21,5 +24,5 @@
 					return angular.lowercase(name.replace(/\s+/g, '-'));
 				}
 			};
-		}]);
+		}
 })();

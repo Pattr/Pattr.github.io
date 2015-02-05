@@ -10,7 +10,8 @@
 		gulp.src(['application/javascript/**/*.js'])
 			.pipe(eslint({
 				rules: {
-					'quotes': [2, 'single']
+					'quotes': [2, 'single'],
+					'no-use-before-define': 0
 				},
 				globals: {
 					'angular': true,
@@ -29,6 +30,7 @@
 					'describe': true,
 					'it': true,
 					'beforeEach': true,
+					'beforeAll': true,
 					'browser': true,
 					'expect': true,
 					'element': true,

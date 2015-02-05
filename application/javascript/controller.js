@@ -2,7 +2,11 @@
 	'use strict';
 
 	angular.module('pattr.controllers', [])
-		.controller('NavController', ['$scope', 'ComponentService', function($scope, ComponentService){
+		.controller('NavController', NavController)
+		.controller('ComponentController', ComponentController);
+
+		NavController.$inject = ['$scope', 'ComponentService'];
+		function NavController($scope, ComponentService){
 			ComponentService.getComponentsList().success(function(list){
 				list = _.map(list, function(c) {
 					c.id = ComponentService.generateId(c.name);
@@ -12,8 +16,10 @@
 					return c.category;
 				});
 			});
-		}])
-		.controller('ComponentController', ['$scope', 'component', function($scope, component){
+		}
+
+		ComponentController.$inject = ['$scope', 'component'];
+		function ComponentController($scope, component){
 			$scope.component = component;
-		}]);
+		}
 })();

@@ -4,6 +4,8 @@
 
 # Pattr.github.io
 
+[![Join the chat at https://gitter.im/Pattr/Pattr.github.io](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Pattr/Pattr.github.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## How launch the Portal
 
 You can launch this Portal with a basic Apache distribution (WAMP, LAMP, ...). You can also use the Node.JS serve tool. 

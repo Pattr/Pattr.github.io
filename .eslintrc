@@ -1,8 +1,0 @@
-env:
-    browser: true
-globals:
-    angular: true
-    _: true
-plugins:
-  - angular
-  - jasmine

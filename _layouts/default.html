@@ -22,20 +22,20 @@
     {% endif %}
         <div id="container">
             {% if page.index %}
-            <header>
+            <header role="banner">
                 <h1>Pattr - The Markup Library</h1>
                 <p class="baseline">It's all about progresive enhancement</p>
             </header>
             {% endif %}
 
             {% if page.component %}
-            <header>
+            <heade role="banner"r>
                 <h1 class="components">Pattr - The Markup Library</h1>
             </header>
             {% endif %}
 
             <div id="index">
-                <nav data-ng-controller="NavController">
+                <nav role="navigation" data-ng-controller="NavController">
                     <h2 class="skip"><a href="#wrapper">Main Menu (Skip to main content)</a></h2>
                     <ul class="main-nav">
                         <li><strong>Blocks</strong>

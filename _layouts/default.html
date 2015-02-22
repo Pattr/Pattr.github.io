@@ -6,6 +6,9 @@
 
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width; initial-scale=1.0">
+        {% if page.description %}
+            <meta name="description" content="{{ page.description }}">
+        {% endif %}
         <link rel="shortcut icon" href="imgs/favicon.png">
         <link rel="apple-touch-icon" href="imgs/apple-touch-icon.png">
         <link href="/assets/styles/main.css" rel="stylesheet" title="Default Theme" media="all" />

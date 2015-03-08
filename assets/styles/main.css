@@ -661,5 +661,5 @@ div.info-block li {
 
 
 @media screen and (min-width: 1480px) {
-	#home div.content {padding: 5em 5%;}
+	#home div.content, #home section.presentation {padding: 10% 5%;}
 }
